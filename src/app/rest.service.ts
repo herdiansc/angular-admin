@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
@@ -36,8 +36,10 @@ export class RestService {
     };
   }
 
-  getEmployees(): Observable<any> {
-    return this.http.get(this.endpoint + 'employees').pipe(
+  getEmployees(keyword: string): Observable<any> {
+    let options = keyword ? { params: new HttpParams().set('q', keyword.trim()) } : {};
+    
+    return this.http.get(this.endpoint + 'employees', options).pipe(
       map(this.extractData));
   }
 

@@ -9,7 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EmployeeAddComponent implements OnInit {
 
-  @Input() employeeData = { id:null, first_name:'', last_name: '', email: '' };
+  genders = [{code:'m', label:'Male'}, {code:'f', label:'Female'}];
+  
+  @Input() employeeData = { id:null, first_name: '', last_name: '', email:'', gender:'', address:'' };
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
