@@ -9,6 +9,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes: Routes = [
   {
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     CustomerListComponent,
     CustomerAddComponent,
     CustomerDetailComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    SidebarComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
