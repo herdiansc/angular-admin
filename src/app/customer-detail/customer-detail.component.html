@@ -1,0 +1,45 @@
+<section class="content-header">
+  <h1>
+    Customers
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/customer">List</a></li>
+    <li class="active">Detail</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Detail Customer</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <div class="box-body" *ngIf="customer">
+						<dl>
+							<dt>ID</dt>
+							<dd class="margin-bottom">{{customer.id}}</dd>
+							<dt>First Name</dt>
+							<dd class="margin-bottom">{{customer.first_name}}</dd>
+							<dt>Last Name</dt>
+							<dd class="margin-bottom">{{customer.last_name}}</dd>
+							<dt>Email</dt>
+							<dd class="margin-bottom">{{customer.email}}</dd>
+              <dt>Gender</dt>
+              <dd class="margin-bottom">{{customer.gender == 'm' ? 'Male' : 'Female'}}</dd>
+              <dt>Address</dt>
+              <dd class="margin-bottom">{{customer.address}}</dd>
+						</dl>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer" *ngIf="customer">
+            <a class="btn btn-primary" routerLink="/customer/edit/{{customer.id}}">Edit</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

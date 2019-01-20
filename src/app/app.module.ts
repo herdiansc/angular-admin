@@ -5,32 +5,32 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { EmployeeAddComponent } from './employee-add/employee-add.component';
-import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
-import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerAddComponent } from './customer-add/customer-add.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 const appRoutes: Routes = [
   {
-    path: 'employee',
-    component: EmployeeComponent,
-    data: { title: 'Employee List' },
+    path: 'customer',
+    component: CustomerListComponent,
+    data: { title: 'Customer List' },
     runGuardsAndResolvers: 'always'
   },
   {
-    path: 'employee/detail/:id',
-    component: EmployeeDetailComponent,
-    data: { title: 'Employee Details' }
+    path: 'customer/detail/:id',
+    component: CustomerDetailComponent,
+    data: { title: 'Customer Details' }
   },
   {
-    path: 'employee/add',
-    component: EmployeeAddComponent,
-    data: { title: 'Employee Add' }
+    path: 'customer/add',
+    component: CustomerAddComponent,
+    data: { title: 'Customer Add' }
   },
   {
-    path: 'employee/edit/:id',
-    component: EmployeeEditComponent,
-    data: { title: 'Employee Edit' }
+    path: 'customer/edit/:id',
+    component: CustomerEditComponent,
+    data: { title: 'Customer Edit' }
   },
   { path: '',
     redirectTo: '/',
@@ -41,10 +41,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
-    EmployeeAddComponent,
-    EmployeeDetailComponent,
-    EmployeeEditComponent
+    CustomerListComponent,
+    CustomerAddComponent,
+    CustomerDetailComponent,
+    CustomerEditComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),

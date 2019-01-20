@@ -7,7 +7,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class RestService {
+export class CustomerService {
   endpoint = 'http://localhost:3000/';
   headers = new HttpHeaders({
     'Content-Type':  'application/json'
@@ -42,7 +42,7 @@ export class RestService {
     };
   }
 
-  getEmployees(keyword: string='', page: any, limit: any): Observable<any> {
+  getCustomers(keyword: string='', page: any, limit: any): Observable<any> {
     let queryString: string = '';
     queryString += '&q=' + keyword.trim();
     queryString += '&_limit=' + limit;
@@ -52,34 +52,34 @@ export class RestService {
       fromString: queryString
     });
     
-    return this.http.get(this.endpoint + 'employees', {params: params, observe: 'response' }).pipe(
+    return this.http.get(this.endpoint + 'customers', {params: params, observe: 'response' }).pipe(
       map(this.extractData));
   }
 
-  getEmployee(id): Observable<any> {
-    return this.http.get(this.endpoint + 'employees/' + id, {observe: 'response'}).pipe(
+  getCustomer(id): Observable<any> {
+    return this.http.get(this.endpoint + 'customers/' + id, {observe: 'response'}).pipe(
       map(this.extractData));
   }
 
-  addEmployee (employee): Observable<any> {
-    console.log(employee);
-    return this.http.post<any>(this.endpoint + 'employees', JSON.stringify(employee), {headers: this.headers, observe: 'response'}).pipe(
-      tap((employee) => console.log(`added employee w/ id=`)),
-      catchError(this.handleError<any>('addEmployee'))
+  addCustomer (customer): Observable<any> {
+    console.log(customer);
+    return this.http.post<any>(this.endpoint + 'customers', JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
+      tap((customer) => console.log(`added customer w/ id=`)),
+      catchError(this.handleError<any>('addCustomer'))
     );
   }
 
-  updateEmployee (id, employee): Observable<any> {
-    return this.http.put(this.endpoint + 'employees/' + id, JSON.stringify(employee), {headers: this.headers, observe: 'response'}).pipe(
-      tap(_ => console.log(`updated employee id=${id}`)),
-      catchError(this.handleError<any>('updateEmployee'))
+  updateCustomer (id, customer): Observable<any> {
+    return this.http.put(this.endpoint + 'customers/' + id, JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
+      tap(_ => console.log(`updated customer id=${id}`)),
+      catchError(this.handleError<any>('updateCustomer'))
     );
   }
 
-  deleteEmployee (id): Observable<any> { 
-    return this.http.delete<any>(this.endpoint + 'employees/' + id, {headers: this.headers, observe: 'response'}).pipe(
-      tap(_ => console.log(`deleted employee id=${id}`)),
-      catchError(this.handleError<any>('deleteEmployee'))
+  deleteCustomer (id): Observable<any> { 
+    return this.http.delete<any>(this.endpoint + 'customers/' + id, {headers: this.headers, observe: 'response'}).pipe(
+      tap(_ => console.log(`deleted customer id=${id}`)),
+      catchError(this.handleError<any>('deleteCustomer'))
     );
   }
 }

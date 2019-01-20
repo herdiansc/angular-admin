@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Employees
+    Customers
   </h1>
   <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
@@ -13,7 +13,7 @@
     <div class="col-xs-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">List of Employees</h3>
+          <h3 class="box-title">List of Customers</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -34,25 +34,25 @@
               <th>Email</th>
               <th>Action</th>
             </tr>
-            <tr *ngFor="let employee of employees.body; let i=index;">
-              <td>{{employee.id}}</td>
-              <td>{{employee.first_name}}</td>
-              <td>{{employee.last_name}}</td>
-              <td>{{employee.email}}</td>
+            <tr *ngFor="let customer of customers.body; let i=index;">
+              <td>{{customer.id}}</td>
+              <td>{{customer.first_name}}</td>
+              <td>{{customer.last_name}}</td>
+              <td>{{customer.email}}</td>
               <td>
-                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee/detail/{{employee.id}}">Detail</a>
-                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee/edit/{{employee.id}}">Edit</a>
-                <button type="button" class="btn btn-danger margin-r-5 btn-sm" (click)="delete(employee.id)">Delete</button>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/customer/detail/{{customer.id}}">Detail</a>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/customer/edit/{{customer.id}}">Edit</a>
+                <button type="button" class="btn btn-danger margin-r-5 btn-sm" (click)="delete(customer.id)">Delete</button>
               </td>
             </tr>
           </table>
         </div>
         <!-- /.box-body -->
 
-        <div class="box-footer clearfix" *ngIf="employees.body.length < employees.x_total_count">
+        <div class="box-footer clearfix" *ngIf="customers.body.length < customers.x_total_count">
           <ul class="pagination pagination-sm no-margin pull-right">
-            <li *ngIf="page > 1"><button (click)="reloadEmployees(+(page)-1)" type="button" class="btn btn-default btn-sm margin-r-5">« Prev</button></li>
-            <li *ngIf="page * limit < employees.x_total_count"><button (click)="reloadEmployees(+(page)+1)" type="button" class="btn btn-default btn-sm">Next »</button></li>
+            <li *ngIf="page > 1"><button (click)="reloadCustomers(+(page)-1)" type="button" class="btn btn-default btn-sm margin-r-5">« Prev</button></li>
+            <li *ngIf="page * limit < customers.x_total_count"><button (click)="reloadCustomers(+(page)+1)" type="button" class="btn btn-default btn-sm">Next »</button></li>
           </ul>
         </div>
       </div>
@@ -78,7 +78,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="reloadEmployees()">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="reloadCustomers()">Submit</button>
       </div>
     </div>
     <!-- /.modal-content -->
