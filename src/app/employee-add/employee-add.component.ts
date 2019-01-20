@@ -20,7 +20,7 @@ export class EmployeeAddComponent implements OnInit {
 
   addEmployee() {
     this.rest.addEmployee(this.employeeData).subscribe((result) => {
-      this.router.navigate(['/employees']);
+      this.router.navigate(['/employee']);
     }, (err) => {
       console.log(err);
     });

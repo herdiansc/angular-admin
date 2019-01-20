@@ -5,7 +5,7 @@
       "first_name": "Sebastian",
       "last_name": "Eschweiler",
       "email": "sebastian@codingthesmartway.com",
-      "gender": "M",
+      "gender": "m",
       "address": "Manchester M11 3JA, Inggris Raya"
     },
     {
@@ -13,7 +13,7 @@
       "first_name": "Steve",
       "last_name": "Palmer",
       "email": "steve@codingthesmartway.com",
-      "gender": "M",
+      "gender": "m",
       "address": "Manchester M11 3JA, Inggris Raya"
     },
     {
@@ -21,7 +21,7 @@
       "first_name": "Ann",
       "last_name": "Smith S.Ag",
       "email": "ann@codingthesmartway.com",
-      "gender": "F",
+      "gender": "f",
       "address": "Manchester M11 3JA, Inggris Raya"
     },
     {

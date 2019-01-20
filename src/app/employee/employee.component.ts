@@ -32,12 +32,12 @@ export class EmployeeComponent implements OnInit {
   }
 
   searchEmployees() {
-    this.router.navigate(['/employees'], { queryParams: { keyword: this.keyword } });
+    this.router.navigate(['/employee'], { queryParams: { keyword: this.keyword } });
     this.getEmployees();
   }
 
   add() {
-    this.router.navigate(['/employee-add']);
+    this.router.navigate(['/employee/add']);
   }
 
   delete(id) {

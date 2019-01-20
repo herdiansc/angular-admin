@@ -4,7 +4,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
-    <li><a routerLink="/employees">List</a></li>
+    <li><a routerLink="/employee">List</a></li>
     <li class="active">Detail</li>
   </ol>
 </section>
@@ -37,7 +37,7 @@
           <!-- /.box-body -->
 
           <div class="box-footer" *ngIf="employee">
-            <a class="btn btn-primary" routerLink="/employee-edit/{{employee.id}}">Edit</a>
+            <a class="btn btn-primary" routerLink="/employee/edit/{{employee.id}}">Edit</a>
           </div>
       </div>
     </div>

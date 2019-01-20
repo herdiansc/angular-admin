@@ -24,7 +24,7 @@ export class EmployeeEditComponent implements OnInit {
 
   updateEmployee() {
     this.rest.updateEmployee(this.route.snapshot.params['id'], this.employeeData).subscribe((result) => {
-      this.router.navigate(['/employee-details/'+result.id]);
+      this.router.navigate(['/employee/detail/'+result.id]);
     }, (err) => {
       console.log(err);
     });

@@ -12,22 +12,22 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 
 const appRoutes: Routes = [
   {
-    path: 'employees',
+    path: 'employee',
     component: EmployeeComponent,
     data: { title: 'Employee List' }
   },
   {
-    path: 'employee-details/:id',
+    path: 'employee/detail/:id',
     component: EmployeeDetailComponent,
     data: { title: 'Employee Details' }
   },
   {
-    path: 'employee-add',
+    path: 'employee/add',
     component: EmployeeAddComponent,
     data: { title: 'Employee Add' }
   },
   {
-    path: 'employee-edit/:id',
+    path: 'employee/edit/:id',
     component: EmployeeEditComponent,
     data: { title: 'Employee Edit' }
   },

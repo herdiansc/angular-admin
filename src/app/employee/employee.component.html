@@ -40,8 +40,8 @@
               <td>{{employee.last_name}}</td>
               <td>{{employee.email}}</td>
               <td>
-                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee-details/{{employee.id}}">Detail</a>
-                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee-edit/{{employee.id}}">Edit</a>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee/detail/{{employee.id}}">Detail</a>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee/edit/{{employee.id}}">Edit</a>
                 <button type="button" class="btn btn-danger margin-r-5 btn-sm" (click)="delete(employee.id)">Delete</button>
               </td>
             </tr>
