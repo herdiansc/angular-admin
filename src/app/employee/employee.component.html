@@ -1,0 +1,54 @@
+<section class="content-header">
+  <h1>
+    Employees
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">List</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">List of Employees</h3>
+
+          <div class="box-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+              <div class="input-group-btn">
+                <button (click)="add()" type="button" class="btn btn-info btn-sm btn-block">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let employee of employees; let i=index;">
+              <td>{{employee.id}}</td>
+              <td>{{employee.first_name}}</td>
+              <td>{{employee.last_name}}</td>
+              <td>{{employee.email}}</td>
+              <td>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee-details/{{employee.id}}">Detail</a>
+                <a class="btn btn-default margin-r-5 btn-sm" routerLink="/employee-edit/{{employee.id}}">Edit</a>
+                <button type="button" class="btn btn-danger margin-r-5 btn-sm" (click)="delete(employee.id)">Delete</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+  </div>
+</section>

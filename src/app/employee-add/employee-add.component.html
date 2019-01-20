@@ -1,0 +1,47 @@
+<section class="content-header">
+  <h1>
+    Employees
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/employees">List</a></li>
+    <li class="active">Add</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Add Employee</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <div class="box-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">ID</label>
+              <input type="email" class="form-control" placeholder="Enter id" [(ngModel)]="employeeData.id">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">First Name</label>
+              <input type="text" class="form-control" placeholder="Enter first name" [(ngModel)]="employeeData.first_name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name</label>
+              <input type="text" class="form-control"  placeholder="Enter last name" [(ngModel)]="employeeData.last_name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Email</label>
+              <input type="text" class="form-control" placeholder="Enter email" [(ngModel)]="employeeData.email">
+            </div>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary" (click)="addEmployee()">Submit</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
