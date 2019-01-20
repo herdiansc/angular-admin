@@ -12,27 +12,31 @@ export class EmployeeComponent implements OnInit {
   employees:any = [];
 
   keyword: any;
+  limit: number;
+  page: number;
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.keyword = params['keyword'];
+      this.limit = params['limit'] ? params['limit'] : 10;
+      this.page = params['page'] ? params['page'] : 1 ;
     });
     this.getEmployees();
   }
 
   getEmployees() {
-    this.employees = [];
-    console.log(this.keyword);
-    this.rest.getEmployees(this.keyword).subscribe((data: {}) => {
-      console.log(data);
+    this.employees = {body:[], x_total_count:0};
+
+    this.rest.getEmployees(this.keyword, this.page, this.limit).subscribe((data: {}) => {
       this.employees = data;
     });
   }
 
-  searchEmployees() {
-    this.router.navigate(['/employee'], { queryParams: { keyword: this.keyword } });
+  reloadEmployees(page: number=1) {
+    this.page = page;
+    this.router.navigate(['/employee'], { queryParams: { keyword: this.keyword, limit: this.limit, page:this.page } });
     this.getEmployees();
   }
 

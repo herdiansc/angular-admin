@@ -14,7 +14,8 @@ const appRoutes: Routes = [
   {
     path: 'employee',
     component: EmployeeComponent,
-    data: { title: 'Employee List' }
+    data: { title: 'Employee List' },
+    runGuardsAndResolvers: 'always'
   },
   {
     path: 'employee/detail/:id',
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     EmployeeEditComponent
   ],
   imports: [
-  	RouterModule.forRoot(appRoutes),
+  	RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
   	FormsModule,
     BrowserModule,
     HttpClientModule
