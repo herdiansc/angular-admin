@@ -1,5 +1,5 @@
 # Angular Admin
-[![Build Status](https://secure.travis-ci.org/herdiansc/angular-admin.png)](http://travis-ci.org/herdiansc/angular-admin)
+![Repo Size](https://img.shields.io/github/languages/code-size/herdiansc/angular-admin.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Bower: 0.0.1](https://img.shields.io/badge/bower-1.8.7-red.svg)
 
