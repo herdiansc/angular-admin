@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams, HttpResponse } 
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
+import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  endpoint = 'http://localhost:3000/';
   headers = new HttpHeaders({
     'Content-Type':  'application/json'
   });
@@ -52,32 +53,32 @@ export class CustomerService {
       fromString: queryString
     });
     
-    return this.http.get(this.endpoint + 'customers', {params: params, observe: 'response' }).pipe(
+    return this.http.get(environment.endpoint + 'customers', {params: params, observe: 'response' }).pipe(
       map(this.extractData));
   }
 
   getCustomer(id): Observable<any> {
-    return this.http.get(this.endpoint + 'customers/' + id, {observe: 'response'}).pipe(
+    return this.http.get(environment.endpoint + 'customers/' + id, {observe: 'response'}).pipe(
       map(this.extractData));
   }
 
   addCustomer (customer): Observable<any> {
     console.log(customer);
-    return this.http.post<any>(this.endpoint + 'customers', JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
+    return this.http.post<any>(environment.endpoint + 'customers', JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
       tap((customer) => console.log(`added customer w/ id=`)),
       catchError(this.handleError<any>('addCustomer'))
     );
   }
 
   updateCustomer (id, customer): Observable<any> {
-    return this.http.put(this.endpoint + 'customers/' + id, JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
+    return this.http.put(environment.endpoint + 'customers/' + id, JSON.stringify(customer), {headers: this.headers, observe: 'response'}).pipe(
       tap(_ => console.log(`updated customer id=${id}`)),
       catchError(this.handleError<any>('updateCustomer'))
     );
   }
 
   deleteCustomer (id): Observable<any> { 
-    return this.http.delete<any>(this.endpoint + 'customers/' + id, {headers: this.headers, observe: 'response'}).pipe(
+    return this.http.delete<any>(environment.endpoint + 'customers/' + id, {headers: this.headers, observe: 'response'}).pipe(
       tap(_ => console.log(`deleted customer id=${id}`)),
       catchError(this.handleError<any>('deleteCustomer'))
     );
