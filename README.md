@@ -1,4 +1,8 @@
 # Angular Admin
+[![Build Status](https://secure.travis-ci.org/herdiansc/angular-admin.png)](http://travis-ci.org/herdiansc/angular-admin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Bower: 0.0.1](https://img.shields.io/badge/bower-1.8.7-red.svg)
+
 This project is an angular implementation in admin control panel based on admin lte template
 
 ## How to Run
