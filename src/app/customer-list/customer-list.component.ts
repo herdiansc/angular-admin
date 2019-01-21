@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CustomerService } from '../customer.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit, OnDestroy {
 
   customers:any = [];
 
@@ -15,7 +15,21 @@ export class CustomerListComponent implements OnInit {
   limit: number;
   page: number;
 
-  constructor(public rest:CustomerService, private route: ActivatedRoute, private router: Router) { }
+  navigationSubscription;
+
+  constructor(public rest:CustomerService, private route: ActivatedRoute, private router: Router) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.getCustomers();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
