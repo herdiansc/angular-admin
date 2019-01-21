@@ -32,5 +32,37 @@
       "gender": "m",
       "address": "Guru Mughni Mega Kuningan, Indonesia"
     }
+  ],
+  "packages": [
+    {
+      "id": "1",
+      "title": "Basic",
+      "description": "Basic subscription",
+      "price": "200000"
+    },
+    {
+      "id": "2",
+      "title": "Medium",
+      "description": "Medium subscription",
+      "price": "400000"
+    },
+    {
+      "id": "3",
+      "title": "Large",
+      "description": "Large subscription",
+      "price": "500000"
+    }
+  ],
+  "benefits": [
+    {
+      "id": "1",
+      "title": "Online Chat Support",
+      "description": "Online Chat Support via Skype"
+    },
+    {
+      "id": "2",
+      "title": "Telephone Support",
+      "description": "Telp Support"
+    }
   ]
 }
