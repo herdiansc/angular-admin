@@ -24,7 +24,8 @@ export class CustomerEditComponent implements OnInit {
 
   updateCustomer() {
     this.rest.updateCustomer(this.route.snapshot.params['id'], this.customerData).subscribe((result) => {
-      this.router.navigate(['/customer/detail/'+result.id]);
+    console.log('result');
+      this.router.navigate(['/customer/detail/'+result.body.id]);
     }, (err) => {
       console.log(err);
     });
