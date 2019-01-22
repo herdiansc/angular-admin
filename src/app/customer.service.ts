@@ -54,7 +54,9 @@ export class CustomerService {
     });
     
     return this.http.get(environment.endpoint + 'customers', {params: params, observe: 'response' }).pipe(
-      map(this.extractData));
+      tap((customer) => console.log(customer)),
+      map(this.extractData)
+    );
   }
 
   getCustomer(id): Observable<any> {
