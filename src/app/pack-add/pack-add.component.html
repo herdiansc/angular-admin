@@ -1,0 +1,84 @@
+<section class="content-header">
+  <h1>
+    Packs
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/pack">List</a></li>
+    <li class="active">Add</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Add Pack</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <form (ngSubmit)="addPack()" #packForm="ngForm">
+          <div class="box-body">
+            <div [class]="id.invalid && (id.dirty || id.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputEmail1">ID</label>
+              <input type="email" class="form-control" placeholder="Enter id" id="id" name="id" required pattern="\d+" [(ngModel)]="packData.id" #id="ngModel">
+              <div *ngIf="id.invalid && (id.dirty || id.touched)">
+                <span class="help-block" *ngIf="id.errors.required">
+                  ID is required.
+                </span>
+                <span class="help-block" *ngIf="id.errors.pattern">
+                  ID is invalid, should only number.
+                </span>
+              </div>
+            </div>
+            <div [class]="title.invalid && (title.dirty || title.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Title</label>
+              <input type="text" class="form-control" placeholder="Enter title" id="title" name="title" required minlength="4" [(ngModel)]="packData.title" #title="ngModel">
+              <div *ngIf="title.invalid && (title.dirty || title.touched)">
+                <span class="help-block" *ngIf="title.errors.required">
+                  Title is required.
+                </span>
+                <span class="help-block" *ngIf="title.errors.minlength">
+                  Title must be at least 4 characters long.
+                </span>
+              </div>
+            </div>
+            <div [class]="price.invalid && (price.dirty || price.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Price</label>
+              <input type="text" class="form-control" placeholder="Enter price" id="price" name="price" required pattern="\d+" minlength="4" [(ngModel)]="packData.price" #price="ngModel">
+              <div *ngIf="price.invalid && (price.dirty || price.touched)">
+                <span class="help-block" *ngIf="price.errors.required">
+                  Price is required.
+                </span>
+                <span class="help-block" *ngIf="price.errors.minlength">
+                  Price must be at least 4 digits long.
+                </span>
+                <span class="help-block" *ngIf="price.errors.pattern">
+                  Price is invalid, should only number.
+                </span>
+              </div>
+            </div>
+            <div [class]="description.invalid && (description.dirty || description.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Description</label>
+              <textarea class="form-control" placeholder="Enter description" id="description" name="description" required minlength="4" [(ngModel)]="packData.description" #description="ngModel"></textarea>
+              <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                <span class="help-block" *ngIf="description.errors.required">
+                  Description is required.
+                </span>
+                <span class="help-block" *ngIf="description.errors.minlength">
+                  Description must be at least 4 digits long.
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!packForm.form.valid">Submit</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -29,15 +29,15 @@
       "first_name": "Herdian",
       "last_name": "Sc",
       "email": "herdiansc@gmail.com",
-      "gender": "m",
+      "gender": "f",
       "address": "Guru Mughni Mega Kuningan, Indonesia, jakart"
     }
   ],
-  "packages": [
+  "packs": [
     {
       "id": "1",
       "title": "Basic",
-      "description": "Basic subscription",
+      "description": "Pack basic subscription",
       "price": "200000"
     },
     {
@@ -50,7 +50,7 @@
       "id": "3",
       "title": "Large",
       "description": "Large subscription",
-      "price": "500000"
+      "price": "50000"
     }
   ],
   "benefits": [
