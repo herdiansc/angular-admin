@@ -5,6 +5,9 @@
 
 This project is an angular implementation in admin control panel based on admin lte template
 
+## Demo
+You can check this project demo at https://herdiansc.github.io/angular-admin/
+
 ## How to Run
 Follow these steps to run this project in local development:
 - Install nodejs 10.15.0 or higher
