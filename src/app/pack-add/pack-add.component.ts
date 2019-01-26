@@ -9,9 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PackAddComponent implements OnInit {
 
-  genders = [{code:'m', label:'Male'}, {code:'f', label:'Female'}];
   
-  @Input() packData = { id:null, first_name: '', last_name: '', email:'', gender:'', address:'' };
+  @Input() packData = { id:null, title: '', price: '', description:'' };
 
   constructor(public rest:PackService, private route: ActivatedRoute, private router: Router) { }
 

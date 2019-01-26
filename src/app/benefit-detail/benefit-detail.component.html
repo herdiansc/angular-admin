@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>
+    Benefits
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/benefit">List</a></li>
+    <li class="active">Detail</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Detail Benefit</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <div class="box-body" *ngIf="benefit">
+						<dl>
+							<dt>ID</dt>
+							<dd class="margin-bottom">{{benefit.id}}</dd>
+							<dt>Title</dt>
+							<dd class="margin-bottom">{{benefit.title}}</dd>
+							<dt>Price</dt>
+							<dd class="margin-bottom">{{benefit.price | currency:'IDR':'Rp.'}}</dd>
+							<dt>Description</dt>
+							<dd class="margin-bottom">{{benefit.description}}</dd>
+						</dl>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer" *ngIf="benefit">
+            <a class="btn btn-primary" routerLink="/benefit/edit/{{benefit.id}}">Edit</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

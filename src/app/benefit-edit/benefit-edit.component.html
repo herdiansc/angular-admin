@@ -1,0 +1,69 @@
+<section class="content-header">
+  <h1>
+    Benefits
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/benefit">List</a></li>
+    <li class="active">Edit</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Edit Benefit</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <form (ngSubmit)="updateBenefit()" #benefitForm="ngForm">
+          <div class="box-body">
+            <div [class]="id.invalid && (id.dirty || id.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputEmail1">ID</label>
+              <input type="email" class="form-control" placeholder="Enter id" id="id" name="id" required pattern="\d+" [(ngModel)]="benefitData.id" #id="ngModel">
+              <div *ngIf="id.invalid && (id.dirty || id.touched)">
+                <span class="help-block" *ngIf="id.errors.required">
+                  ID is required.
+                </span>
+                <span class="help-block" *ngIf="id.errors.pattern">
+                  ID is invalid, should only number.
+                </span>
+              </div>
+            </div>
+            <div [class]="title.invalid && (title.dirty || title.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Title</label>
+              <input type="text" class="form-control" placeholder="Enter title" id="title" name="title" required minlength="4" [(ngModel)]="benefitData.title" #title="ngModel">
+              <div *ngIf="title.invalid && (title.dirty || title.touched)">
+                <span class="help-block" *ngIf="title.errors.required">
+                  Title is required.
+                </span>
+                <span class="help-block" *ngIf="title.errors.minlength">
+                  Title must be at least 4 characters long.
+                </span>
+              </div>
+            </div>
+            <div [class]="description.invalid && (description.dirty || description.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Description</label>
+              <textarea class="form-control" placeholder="Enter description" id="description" name="description" required minlength="4" [(ngModel)]="benefitData.description" #description="ngModel"></textarea>
+              <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                <span class="help-block" *ngIf="description.errors.required">
+                  Description is required.
+                </span>
+                <span class="help-block" *ngIf="description.errors.minlength">
+                  Description must be at least 4 digits long.
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!benefitForm.form.valid">Submit</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>

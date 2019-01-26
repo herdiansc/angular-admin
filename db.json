@@ -56,13 +56,23 @@
   "benefits": [
     {
       "id": "1",
-      "title": "Online Chat Support",
+      "title": "Online Chat",
       "description": "Online Chat Support via Skype"
     },
     {
       "id": "2",
-      "title": "Telephone Support",
+      "title": "Telephone",
       "description": "Telp Support"
+    },
+    {
+      "id": "3",
+      "title": "Installation",
+      "description": "Support of installation"
+    },
+    {
+      "id": "4",
+      "title": "Maintenance",
+      "description": "Support after sales"
     }
   ]
 }

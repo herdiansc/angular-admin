@@ -16,6 +16,11 @@ import { PackAddComponent } from './pack-add/pack-add.component';
 import { PackDetailComponent } from './pack-detail/pack-detail.component';
 import { PackEditComponent } from './pack-edit/pack-edit.component';
 
+import { BenefitListComponent } from './benefit-list/benefit-list.component';
+import { BenefitAddComponent } from './benefit-add/benefit-add.component';
+import { BenefitDetailComponent } from './benefit-detail/benefit-detail.component';
+import { BenefitEditComponent } from './benefit-edit/benefit-edit.component';
+
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 const appRoutes: Routes = [
@@ -61,6 +66,27 @@ const appRoutes: Routes = [
     component: PackEditComponent,
     data: { title: 'Pack Edit' }
   },
+  {
+    path: 'benefit',
+    component: BenefitListComponent,
+    data: { title: 'Benefit List' },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: 'benefit/detail/:id',
+    component: BenefitDetailComponent,
+    data: { title: 'Benefit Details' }
+  },
+  {
+    path: 'benefit/add',
+    component: BenefitAddComponent,
+    data: { title: 'Benefit Add' }
+  },
+  {
+    path: 'benefit/edit/:id',
+    component: BenefitEditComponent,
+    data: { title: 'Benefit Edit' }
+  },
   { path: '',
     redirectTo: '/',
     pathMatch: 'full'
@@ -80,6 +106,11 @@ const appRoutes: Routes = [
     PackAddComponent,
     PackDetailComponent,
     PackEditComponent,
+
+    BenefitListComponent,
+    BenefitAddComponent,
+    BenefitDetailComponent,
+    BenefitEditComponent,
 
     SidebarComponent
   ],
