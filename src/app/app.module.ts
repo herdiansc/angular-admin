@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { LSelect2Module } from 'ngx-select2';
-
 import { AppComponent } from './app.component';
 
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -151,8 +149,7 @@ const appRoutes: Routes = [
   	RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
   	FormsModule,
     BrowserModule,
-    HttpClientModule,
-    LSelect2Module
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

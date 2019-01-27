@@ -25,7 +25,6 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
-    "ngx-select2": "^0.2.0",
     "rxjs": "~6.3.3",
     "select2": "^4.0.6-rc.1",
     "tslib": "^1.9.0",
