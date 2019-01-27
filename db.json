@@ -35,7 +35,7 @@
   ],
   "packs": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Basic",
       "description": "Pack basic subscription",
       "price": "200000"
@@ -55,7 +55,7 @@
   ],
   "benefits": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Online Chat",
       "description": "Online Chat Support via Skype"
     },
@@ -73,6 +73,43 @@
       "id": "4",
       "title": "Maintenance",
       "description": "Support after sales"
+    }
+  ],
+  "bundlings": [
+    {
+      "id": 1,
+      "packId": 1,
+      "benefitId": 1,
+      "value": "Yes"
+    },
+    {
+      "id": "2",
+      "packId": "1",
+      "benefitId": "2",
+      "value": "No"
+    },
+    {
+      "id": "3",
+      "packId": "1",
+      "benefitId": "3",
+      "value": "No"
+    },
+    {
+      "id": "4",
+      "packId": "2",
+      "benefitId": "1",
+      "value": "Yes",
+      "pack": {
+        "id": "2",
+        "title": "Medium",
+        "description": "Medium subscription",
+        "price": "400000"
+      },
+      "benefit": {
+        "id": 1,
+        "title": "Online Chat",
+        "description": "Online Chat Support via Skype"
+      }
     }
   ]
 }

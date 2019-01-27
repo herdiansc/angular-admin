@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { LSelect2Module } from 'ngx-select2';
+
 import { AppComponent } from './app.component';
 
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -20,6 +22,11 @@ import { BenefitListComponent } from './benefit-list/benefit-list.component';
 import { BenefitAddComponent } from './benefit-add/benefit-add.component';
 import { BenefitDetailComponent } from './benefit-detail/benefit-detail.component';
 import { BenefitEditComponent } from './benefit-edit/benefit-edit.component';
+
+import { BundlingListComponent } from './bundling-list/bundling-list.component';
+import { BundlingAddComponent } from './bundling-add/bundling-add.component';
+import { BundlingDetailComponent } from './bundling-detail/bundling-detail.component';
+import { BundlingEditComponent } from './bundling-edit/bundling-edit.component';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -87,6 +94,27 @@ const appRoutes: Routes = [
     component: BenefitEditComponent,
     data: { title: 'Benefit Edit' }
   },
+  {
+    path: 'bundling',
+    component: BundlingListComponent,
+    data: { title: 'Bundling List' },
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: 'bundling/detail/:id',
+    component: BundlingDetailComponent,
+    data: { title: 'Bundling Details' }
+  },
+  {
+    path: 'bundling/add',
+    component: BundlingAddComponent,
+    data: { title: 'Bundling Add' }
+  },
+  {
+    path: 'bundling/edit/:id',
+    component: BundlingEditComponent,
+    data: { title: 'Bundling Edit' }
+  },
   { path: '',
     redirectTo: '/',
     pathMatch: 'full'
@@ -112,13 +140,19 @@ const appRoutes: Routes = [
     BenefitDetailComponent,
     BenefitEditComponent,
 
+    BundlingListComponent,
+    BundlingAddComponent,
+    BundlingDetailComponent,
+    BundlingEditComponent,
+
     SidebarComponent
   ],
   imports: [
   	RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
   	FormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    LSelect2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

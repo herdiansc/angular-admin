@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>
+    Bundlings
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/bundling">List</a></li>
+    <li class="active">Detail</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Detail Bundling</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <div class="box-body" *ngIf="bundling">
+						<dl>
+							<dt>ID</dt>
+							<dd class="margin-bottom">{{bundling.id}}</dd>
+							<dt>Pack Title</dt>
+							<dd class="margin-bottom">{{bundling.pack.title}}</dd>
+              <dt>Benefit Title</dt>
+              <dd class="margin-bottom">{{bundling.benefit.title}}</dd>
+							<dt>Value</dt>
+							<dd class="margin-bottom">{{bundling.value}}</dd>
+						</dl>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer" *ngIf="bundling">
+            <a class="btn btn-primary" routerLink="/bundling/edit/{{bundling.id}}">Edit</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

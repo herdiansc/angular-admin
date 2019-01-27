@@ -1,0 +1,54 @@
+<section class="content-header">
+  <h1>
+    Bundlings
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/bundling">List</a></li>
+    <li class="active">Add</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Add Bundling</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <form (ngSubmit)="addBundling()" #bundlingForm="ngForm">
+          <div class="box-body">
+            <div [class]="id.invalid && (id.dirty || id.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputEmail1">ID</label>
+              <input type="email" class="form-control" placeholder="Enter id" id="id" name="id" required pattern="\d+" [(ngModel)]="bundlingData.id" #id="ngModel">
+              <div *ngIf="id.invalid && (id.dirty || id.touched)">
+                <span class="help-block" *ngIf="id.errors.required">
+                  ID is required.
+                </span>
+                <span class="help-block" *ngIf="id.errors.pattern">
+                  ID is invalid, should only number.
+                </span>
+              </div>
+            </div>
+            <div [class]="value.invalid && (value.dirty || value.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Value</label>
+              <input type="text" class="form-control" placeholder="Enter value" id="value" name="value" required [(ngModel)]="bundlingData.value" #value="ngModel">
+              <div *ngIf="value.invalid && (value.dirty || value.touched)">
+                <span class="help-block" *ngIf="value.errors.required">
+                  Value is required.
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!bundlingForm.form.valid">Submit</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>

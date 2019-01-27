@@ -1,0 +1,76 @@
+<section class="content-header">
+  <h1>
+    Bundlings
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a routerLink="/bundling">List</a></li>
+    <li class="active">Edit</li>
+  </ol>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Edit Bundling</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <form (ngSubmit)="updateBundling()" #bundlingForm="ngForm">
+          <div class="box-body">
+            <div [class]="id.invalid && (id.dirty || id.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputEmail1">ID</label>
+              <input type="text" class="form-control" placeholder="Enter id" id="id" name="id" required pattern="\d+" [(ngModel)]="bundlingData.id" #id="ngModel">
+              <div *ngIf="id.invalid && (id.dirty || id.touched)">
+                <span class="help-block" *ngIf="id.errors.required">
+                  ID is required.
+                </span>
+                <span class="help-block" *ngIf="id.errors.pattern">
+                  ID is invalid, should only number.
+                </span>
+              </div>
+            </div>
+            <div [class]="packId.invalid && (packId.dirty || packId.touched) ? 'form-group has-error' : 'form-group' ">
+              <label>Pack</label>
+              <select class="form-control select2" style="width: 100%;" id="packId" name="packId" required [(ngModel)]="bundlingData.packId" #packId="ngModel">
+                <option value="{{bundlingData.packId}}">{{bundlingData.pack.title}}</option>
+              </select>
+              <div *ngIf="packId.invalid && (packId.dirty || packId.touched)">
+                <span class="help-block" *ngIf="packId.errors.required">
+                  Pack is required.
+                </span>
+              </div>
+            </div>
+            <div [class]="benefitId.invalid && (benefitId.dirty || benefitId.touched) ? 'form-group has-error' : 'form-group' ">
+              <label>Benefit</label>
+              <select class="form-control select2" style="width: 100%;" id="benefitId" name="benefitId" required [(ngModel)]="bundlingData.benefitId" #benefitId="ngModel">
+                <option value="">Select Benefit</option>
+              </select>
+              <div *ngIf="benefitId.invalid && (benefitId.dirty || benefitId.touched)">
+                <span class="help-block" *ngIf="benefitId.errors.required">
+                  Benefit is required.
+                </span>
+              </div>
+            </div>
+            <div [class]="value.invalid && (value.dirty || value.touched) ? 'form-group has-error' : 'form-group' ">
+              <label for="exampleInputPassword1">Value</label>
+              <input type="text" class="form-control" placeholder="Enter value" id="value" name="value" required [(ngModel)]="bundlingData.value" #value="ngModel">
+              <div *ngIf="value.invalid && (value.dirty || value.touched)">
+                <span class="help-block" *ngIf="value.errors.required">
+                  Value is required.
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="!bundlingForm.form.valid">Submit</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>

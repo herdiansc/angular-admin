@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    border: 1px solid #d2d6de !important;
+    border-radius: 0 !important;
+    padding: 6px 12px !important;
+    height: 34px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-top: 0 !important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0 !important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-right: 10px !important;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    border-top: 1px solid #f4f4f4 !important;
+}
